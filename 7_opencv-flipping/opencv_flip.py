@@ -33,3 +33,5 @@ flipped = cv2.flip(image, -1)
 print("[INFO] flipping image horizontally and vertically...")
 cv2.imshow("Flipped Horizontally & Vertically", flipped)
 cv2.waitKey(0)
+
+# Referensi: pyimagesearch

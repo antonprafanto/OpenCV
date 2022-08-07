@@ -67,3 +67,5 @@ for (name, method) in methods:
 		inter=method)
 	cv2.imshow("Method: {}".format(name), resized)
 	cv2.waitKey(0)
+
+	# Referensi: pyimagesearch
