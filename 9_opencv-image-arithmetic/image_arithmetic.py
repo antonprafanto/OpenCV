@@ -12,19 +12,19 @@ ap.add_argument("-i", "--image", type=str, default="grand_canyon.png",
 	help="path to the input image")
 args = vars(ap.parse_args())
 
-# Gambar merupakan array NumPy yang disimpan sebagai bilangan bulat
+# Berikut merupakan array NumPy yang disimpan sebagai bilangan bulat
 # unsigned integer 8-bit(unit8) dengan nilai kisaran [0, 255];
 # saat menggunakan fungsi add/subtract di OpenCV, nilai-nilai td akan
 # "dipotong" atau dibatasi pada rentang [0,255] saja,
-# bahkan setelah menerapkan operasi tersebut.
+# bahkan setelah penerapan operasi tersebut.
 added = cv2.add(np.uint8([200]), np.uint8([100]))
 subtracted = cv2.subtract(np.uint8([50]), np.uint8([100]))
 print("max of 255: {}".format(added))
 print("min of 0: {}".format(subtracted))
 
 # Menggunakan operasi aritmatika NumPy akan menghasilkan
-# modulo ("membungkus"), ini agar nilai tidak
-# terpotong ke kisaran [0, 255]
+# modulo ("pembungkus"), ini agar nilai tidak
+# terpotong ke kisaran [0, 255] saja seperti contoh di atas
 added = np.uint8([200]) + np.uint8([100])
 subtracted = np.uint8([50]) - np.uint8([100])
 print("wrap around: {}".format(added))
@@ -34,7 +34,7 @@ print("wrap around: {}".format(subtracted))
 image = cv2.imread(args["image"])
 cv2.imshow("Original", image)
 
-# meningkatkan intensitas piksel pada gambar input sebesar 100
+# Meningkatkan intensitas piksel pada gambar input sebesar 100
 # dilakukan dengan membuat array NumPy yang memiliki *dimensi yang sama*
 # dengan gambar input, mengisinya dengan satu, mengalikannya dengan 100,
 # lalu menambahkan gambar input dan matriks bersama-sama
