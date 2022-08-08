@@ -3,6 +3,8 @@
 
 # import packages yang diperlukan
 import argparse
+
+# install imutils 👉 pip install imutils
 import imutils
 import cv2
 
